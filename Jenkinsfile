@@ -12,9 +12,11 @@ pipeline {
     }
     stage('API Testing') {
       steps {
-        def url = params.url
-        def count = params.count
-        sh 'python3 api.py ${url} ${count}'
+        script{
+            def url = params.url
+            def count = params.count
+            sh 'python3 api.py ${url} ${count}'
+        }
       }
     }
   }
