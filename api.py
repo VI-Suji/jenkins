@@ -1,6 +1,7 @@
 import random
 import json
 import sys
+import requests
 
 def get_list_of_words():
     f= open('names.json')
@@ -14,14 +15,18 @@ try:
 except IndexError:
     print("Some arguments are missing")
 
-# import requests
-# url = "url"
-# iterations = 10000
-# for _ in range(iterations):
-#     response = requests.get(url)
-#     # Check if the request was successful (status code 200)
-#     if response.status_code == 200:
-#         print(f"Request {_ + 1} successful")
-#     else:
-#         print(f"Request {_ + 1} failed with status code {response.status_code}")
-# print("All requests completed.")
+try:
+    count = int(sys.argv[2])
+except:
+    print("Second argument must be number")
+
+url = sys.argv[1]
+iterations = count
+for _ in range(iterations):
+    response = requests.get(url)
+    # Check if the request was successful (status code 200)
+    if response.status_code == 200:
+        print(f"Request {_ + 1} successful")
+    else:
+        print(f"Request {_ + 1} failed with status code {response.status_code}")
+print("All requests completed.")
