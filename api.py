@@ -20,7 +20,7 @@ try:
 except:
     print("Second argument must be number")
 
-url = sys.argv[1]
+url = sys.argv[1]+"?text="+random_word
 iterations = count
 for _ in range(iterations):
     response = requests.get(url)
