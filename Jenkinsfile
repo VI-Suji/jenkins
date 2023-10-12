@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  parameters {
+        string(name: 'url', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string(name: 'count', defaultValue: '', description: 'Enter some information about the person')
+  }
   stages {
     stage('version') {
       steps {
