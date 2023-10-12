@@ -1,5 +1,6 @@
 import random
 import json
+import sys
 
 def get_list_of_words():
     f= open('names.json')
@@ -8,9 +9,10 @@ def get_list_of_words():
 
 words=get_list_of_words()
 random_word = random.choice(words)
-print(random_word) 
-
-
+try:
+    print(random_word,"arg 1",sys.argv[1],"arg 2",sys.argv[2]) 
+except IndexError:
+    print("Some arguments are missing")
 
 # import requests
 # url = "url"
