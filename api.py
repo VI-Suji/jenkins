@@ -26,7 +26,7 @@ for _ in range(iterations):
     response = requests.get(url)
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
-        print(f"Request {_ + 1} successful")
+        print(f"Request {_ + 1} successful "+url)
     else:
         print(f"Request {_ + 1} failed with status code {response.status_code}")
 print("All requests completed.")
