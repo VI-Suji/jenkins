@@ -8,7 +8,7 @@ pipeline {
     }
     stage('API Testing') {
       steps {
-        sh 'python3 api.py'
+        sh 'python3 api.py ${params.url} ${params.count}'
       }
     }
   }
