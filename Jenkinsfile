@@ -8,6 +8,7 @@ pipeline {
     stage('version') {
       steps {
         sh 'python3 --version'
+        sh 'pip3 install requests'
       }
     }
     stage('API Testing') {
